@@ -5,48 +5,43 @@
 //  Created by Silver on 7/28/22.
 //
 
-import LocalAuthentication
+import MapKit
 import SwiftUI
 
-//to run in simulator Feature-biometric enroll, then match
-
 struct ContentView: View {
-    // add states to add to SwiftUI
-    @State private var isUnlocked = false
+    @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
+    @State private var locations = [Location]()
+    
     
     var body: some View {
-        VStack {
-            if isUnlocked {
-                Text("Unlocked")
-            } else {
-                Text("Locked")
+        ZStack {
+            Map(coordinateRegion: $mapRegion, annotationItems: locations){ location in
+                MapMarker(coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
             }
-        }
-        .onAppear(perform: authenticate)
-    }
-    
-    //authenticate method that isolates all the biometric functionality in a single place
-    func authenticate() {
-        //step 1 LAContext  (Local Authentication) _ lets us query users biometric status
-        let context = LAContext()
-        var error: NSError?
-        
-        //step 2 is our biometric authentication currently possible
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            //step 3 ask specifically - can i perform biometric authentication
-            let reason = "We need to unlock your data"
+                .ignoresSafeArea()
             
-            //step 4 passing in a closure of success or failure
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
-                if success {
-                    //authenticated successfully
-                    isUnlocked = true
-                } else {
-                    // there was a problem
+            Circle()
+                .fill(.blue)
+                .opacity(0.3)
+                .frame(width: 32, height: 32)
+            
+            VStack {
+                Spacer()
+                
+                Button {
+                    // create a new location
+                    let newLocation = Location(id: UUID(), name: "New Location", description: "", latitude: mapRegion.center.latitude, longitude: mapRegion.center.longitude)
+                    locations.append(newLocation)
+                } label: {
+                    Image(systemName: "plus")
                 }
+                .padding()
+                .background(.black.opacity(0.75))
+                .foregroundColor(.white)
+                .font(.title)
+                .clipShape(Circle())
+                .padding(.trailing)
             }
-        } else {
-            // no biometrics
         }
     }
 }
