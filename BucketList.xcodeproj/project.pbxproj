@@ -14,6 +14,8 @@
 		D7C3914C28A19BEE009F576C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C3914B28A19BEE009F576C /* Location.swift */; };
 		D7C3914E28A1A4A6009F576C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C3914D28A1A4A6009F576C /* EditView.swift */; };
 		D7C3915028A2E4C2009F576C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C3914F28A2E4C2009F576C /* Result.swift */; };
+		D7C3915228A85F6C009F576C /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C3915128A85F6C009F576C /* ContentView-ViewModel.swift */; };
+		D7C3915428A8666A009F576C /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C3915328A8666A009F576C /* FileManager-DocumentsDirectory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		D7C3914B28A19BEE009F576C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		D7C3914D28A1A4A6009F576C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		D7C3914F28A2E4C2009F576C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		D7C3915128A85F6C009F576C /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
+		D7C3915328A8666A009F576C /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 			children = (
 				D772501E289311A300471CA5 /* BucketListApp.swift */,
 				D7725020289311A300471CA5 /* ContentView.swift */,
+				D7C3915128A85F6C009F576C /* ContentView-ViewModel.swift */,
+				D7C3915328A8666A009F576C /* FileManager-DocumentsDirectory.swift */,
 				D7C3914F28A2E4C2009F576C /* Result.swift */,
 				D7C3914D28A1A4A6009F576C /* EditView.swift */,
 				D7C3914B28A19BEE009F576C /* Location.swift */,
@@ -147,6 +153,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7725021289311A300471CA5 /* ContentView.swift in Sources */,
+				D7C3915428A8666A009F576C /* FileManager-DocumentsDirectory.swift in Sources */,
+				D7C3915228A85F6C009F576C /* ContentView-ViewModel.swift in Sources */,
 				D7C3915028A2E4C2009F576C /* Result.swift in Sources */,
 				D7C3914C28A19BEE009F576C /* Location.swift in Sources */,
 				D7C3914E28A1A4A6009F576C /* EditView.swift in Sources */,
